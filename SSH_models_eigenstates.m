@@ -1,7 +1,7 @@
 clear all;
 
 ksA = 0;t1 = 0.5;t2 = 1;k = 1;n = 15;
-H = diag([repmat([t2 t1],1,n) t2],1) + diag([repmat([t2 t1],1,n) t2],-1);
+H = diag([repmat([t1 t2],1,n-1)],1) + diag([repmat([t1 t2],1,n-1)],-1);
 [V,D] = eig(H);
 
 figure;
