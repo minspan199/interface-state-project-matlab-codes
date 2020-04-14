@@ -4,6 +4,7 @@ ta = 2.5;
 tb = 1;
 
 for kk = 1:1:5000
+    kk
     k = -pi:0.00001:pi;
     r = 0.002*(kk-1);
     rouk = ta + tb*exp(-1i*k);
@@ -19,6 +20,25 @@ for kk = 1:1:5000
     Re2(kk) = inte(phi,-COS)/2;
 end
 R = 0.002*((1:1:5000)-1);
+
+figure
+plot(R/ta,real(Re1),'b.')
+hold on
+plot(R/ta,real(Re2),'r.')
+axis([0 4 -2 2])
+set(gca,'Fontname','Times New Roman');
+set(gcf, 'Position', [00, 00, 450, 300])
+set(gca,'Fontsize',14);
+
+figure
+plot(R/ta,imag(Re1),'b.')
+hold on
+plot(R/ta,imag(Re2),'r.')
+axis([0 4 -2 2])
+set(gca,'Fontname','Times New Roman');
+set(gcf, 'Position', [00, 00, 450, 300])
+set(gca,'Fontsize',14);
+
 figure
 subplot(2,2,1)
 plot(R/ta,real(Re1),'b.')
